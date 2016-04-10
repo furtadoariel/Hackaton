@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Hackaton - Portal da Transparência</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_cpf">Cpf</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Senha</string>
+    <string name="action_sign_in">Entrar ou Registrar-se</string>
+    <string name="action_sign_in_short">Entrar</string>
+    <string name="error_invalid_cpf">Cpf Inválido</string>
+    <string name="error_invalid_email">Email Inválido</string>
+    <string name="error_invalid_password">Senha muito Curta</string>
+    <string name="error_incorrect_password">Senha Incorreta</string>
+    <string name="error_field_required">Campo Obrigatório</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
+</resources>
