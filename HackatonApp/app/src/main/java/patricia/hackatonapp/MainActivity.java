@@ -3,6 +3,7 @@ package patricia.hackatonapp;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
+import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
 import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
@@ -67,6 +68,7 @@ public class MainActivity extends AppCompatActivity implements LoaderCallbacks<C
         // Set up the login form.
         mCpfView = (EditText) findViewById(R.id.cpf);
         populateAutoComplete();
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT); //padrão portrait
 
         mPasswordView = (EditText) findViewById(R.id.password);
         mPasswordView.setOnEditorActionListener(new TextView.OnEditorActionListener() {
@@ -80,8 +82,8 @@ public class MainActivity extends AppCompatActivity implements LoaderCallbacks<C
             }
         });
 
-        Button mEmailSignInButton = (Button) findViewById(R.id.email_sign_in_button);
-        mEmailSignInButton.setOnClickListener(new OnClickListener() {
+        Button mSignInButton = (Button) findViewById(R.id.sign_in_button);
+        mSignInButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
                 attemptLogin();
@@ -151,7 +153,7 @@ public class MainActivity extends AppCompatActivity implements LoaderCallbacks<C
         mPasswordView.setError(null);
 
         // Store values at the time of the login attempt.
-        String email = mCpfView.getText().toString();
+        String cpf = mCpfView.getText().toString();
         String password = mPasswordView.getText().toString();
 
         boolean cancel = false;
@@ -164,12 +166,12 @@ public class MainActivity extends AppCompatActivity implements LoaderCallbacks<C
             cancel = true;
         }
 
-        // Check for a valid email address.
-        if (TextUtils.isEmpty(email)) {
+        // Check for a valid cpf address.
+        if (TextUtils.isEmpty(cpf)) {
             mCpfView.setError(getString(R.string.error_field_required));
             focusView = mCpfView;
             cancel = true;
-        } else if (!isEmailValid(email)) {
+        } else if (!isCpflValid(cpf)) {
             mCpfView.setError(getString(R.string.error_invalid_email));
             focusView = mCpfView;
             cancel = true;
@@ -183,16 +185,18 @@ public class MainActivity extends AppCompatActivity implements LoaderCallbacks<C
             // Show a progress spinner, and kick off a background task to
             // perform the user login attempt.
             showProgress(true);
-            mAuthTask = new UserLoginTask(email, password);
+            mAuthTask = new UserLoginTask(cpf, password);
             mAuthTask.execute((Void) null);
         }
     }
 
-    private boolean isEmailValid(String email) {
+    //verifica se o cpf é valido - implementar
+    private boolean isCpflValid(String cpf) {
         //TODO: Replace this with your own logic
-        return email.contains("@");
+        return true;//cpf.contains(".");
     }
 
+    //verifica se a senha é valida, deve conter mais de 4 caracteres
     private boolean isPasswordValid(String password) {
         //TODO: Replace this with your own logic
         return password.length() > 4;
