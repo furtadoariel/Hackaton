@@ -26,6 +26,7 @@
         android:paddingRight="30dp"
         android:paddingLeft="30dp">
 
+        <!-- linear layout que contem os edit text e o botão de login -->
         <LinearLayout
             android:id="@+id/email_login_form"
             android:layout_width="match_parent"
@@ -35,6 +36,7 @@
             android:layout_gravity="center"
             >
 
+            <!-- campo cpf -->
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
@@ -53,6 +55,7 @@
 
             </android.support.design.widget.TextInputLayout>
 
+            <!-- campo senha -->
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
@@ -71,6 +74,7 @@
 
             </android.support.design.widget.TextInputLayout>
 
+            <!-- botao de login-->
             <Button
                 android:id="@+id/sign_in_button"
                 style="?android:textAppearanceSmall"
