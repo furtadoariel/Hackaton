@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/home"
+            android:icon="@drawable/home2"
+            android:title="Home" />
+        <item
+            android:id="@+id/feed"
+            android:icon="@drawable/ic_apps_black_24dp"
+            android:title="Feed News" />
+        <item
+            android:id="@+id/register"
+            android:icon="@drawable/ic_apps_black_24dp"
+            android:title="Registrar" />
+        <item
+            android:id="@+id/ferramentas"
+            android:icon="@drawable/ic_apps_black_24dp"
+            android:title="Ferramentas (exemplo)" />
+
+        <item
+            android:id="@+id/sobre"
+            android:icon="@drawable/info2"
+            android:title="Sobre" />
+    </group>
+
+
+    <item android:title="Nao sei o que escrever">
+        <menu>
+            <item
+                android:id="@+id/sobre2"
+                android:icon="@drawable/info2"
+                android:title="Sobre" />
+            <item
+                android:id="@+id/sair"
+                android:icon="@drawable/ic_apps_black_24dp"
+                android:title="Sair" />
+        </menu>
+    </item>
+
+</menu>

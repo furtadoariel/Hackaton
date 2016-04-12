@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">Hackaton3</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+
+
+    <!-- Strings related to login -->
+    <string name="prompt_cpf">Cpf</string>
+    <string name="prompt_password">Senha (opcional)</string>
+    <string name="action_sign_in">Entrar </string>
+    <string name="action_sign_in_short">Entrar</string>
+    <string name="action_register">Registrar-se </string>
+
+
+    <string name="error_invalid_cpf">Este cpf é inválido</string>
+    <string name="error_invalid_password">Esta senha é muito curta</string>
+    <string name="error_incorrect_password">Esta senha está incorreta</string>
+    <string name="error_field_required">Este campo deve ser preenchido</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+    completions." </string>
+
+
+</resources>
