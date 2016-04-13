@@ -44,25 +44,62 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        //cpf e senha
+        //cpf
         mCpfView = (EditText) findViewById(R.id.cpf);
+        mCpfView.addTextChangedListener(Mask.insert("###.###.###-##", mCpfView)); //campo cpf formatado
+
+
         mPasswordView = (EditText) findViewById(R.id.password);
 
-        //botoes login e registrar
-        mSignInButton = (Button) findViewById(R.id.sign_in_button);
-        mRegisterButton = (Button) findViewById(R.id.register__button);
 
+        //campo_telefone.addTextChangedListener(Mask.insert("(##)####-####", campo_telefone));
+//-----------------------------------------------------------------------------------
         mLoginFormView = findViewById(R.id.login_form);
         mProgressView = findViewById(R.id.login_progress);
-        mSignInButton.setOnClickListener(new View.OnClickListener() {
+
+//-----------------------------------------------------------------------------------
+
+        //botes clicaveis
+
+       /* mSignInButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(MainActivity.this, FeedActivity.class);
                 startActivity(i);
             }
         }); //fim click listener
+        */
 
 
+        //seta o xml do botao
+        mSignInButton = (Button) findViewById(R.id.sign_in_button);
+        //caso o botao entrar seja clicado
+        mSignInButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Validator.validateNotNull(mPasswordView,"Preencha o campo senha");
+                Validator.validateNotNull(mCpfView,"Preencha o campo CPF");
+                boolean cpf_valido = Validator.validateCPF(mCpfView.getText().toString());
+                boolean senha_valida = Validator.validatePassword(mPasswordView.getText().toString());
+                //caso o cpf seja invalido mostra o erro
+
+                if(!cpf_valido) {
+                    mCpfView.setError("CPF inválido.");
+                    mCpfView.setFocusable(true);
+                    mCpfView.requestFocus();
+                }else if (!senha_valida) {
+                        mPasswordView.setError("Senha inválida.\nSua senha deve conter mais de 4 caracteres.");
+                        mPasswordView.setFocusable(true);
+                        mPasswordView.requestFocus();
+                } else {
+                    //caso o cpf seja valido segue para a tela de feed
+                    Intent i = new Intent(MainActivity.this, FeedActivity.class);
+                    startActivity(i);
+                }
+            }
+        }); //final do onClickListener
+
+
+        mRegisterButton = (Button) findViewById(R.id.register__button);
         //caso o botao registrar seja clicado
         mRegisterButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -72,17 +109,6 @@ public class MainActivity extends AppCompatActivity
             }
         });
 
-/*
-        //floating button
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
-*/
     }
 
     @Override
