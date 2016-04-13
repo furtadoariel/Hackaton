@@ -28,8 +28,8 @@ public class FeedActivity extends AppCompatActivity {
         setSupportActionBar(mToolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true); //setinha para voltar a home
 
-        mText = (TextView) findViewById(R.id.tv);
-        mText.setText("Tela do feed news");
+        //mText = (TextView) findViewById(R.id.tv);
+        //mText.setText("Tela do feed news");
 
     }
 
