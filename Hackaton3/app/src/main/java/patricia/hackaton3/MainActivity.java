@@ -15,6 +15,10 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.EditText;
+import patricia.hackaton3.RegisterActivity;
+
+import java.util.ArrayList;
+import java.util.HashMap;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     //variaveis
@@ -24,6 +28,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private View mLoginFormView;
     private Button mSignInButton;
     private Button mRegisterButton;
+    private RegisterActivity registro = new RegisterActivity();
+
 
     private Toolbar mToolbar;
     @Override
@@ -69,7 +75,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }); //fim click listener
         */
 
-
         //seta o xml do botao
         mSignInButton = (Button) findViewById(R.id.sign_in_button);
         //caso o botao entrar seja clicado
@@ -89,7 +94,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                         mPasswordView.setError("Senha inválida.\nSua senha deve conter mais de 4 caracteres.");
                         mPasswordView.setFocusable(true);
                         mPasswordView.requestFocus();
-                } else {
+                } else { //ainda não verifica se a pessoa esta cadastrada
                     //caso o cpf seja valido segue para a tela de feed
                     Intent i = new Intent(MainActivity.this, FeedActivity.class);
                     startActivity(i);
@@ -166,4 +171,5 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
 }

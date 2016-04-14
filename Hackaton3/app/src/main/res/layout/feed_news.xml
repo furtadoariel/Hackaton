@@ -5,7 +5,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="patricia.hackaton2.FeedActivity"
+    tools:context=".FeedActivity"
     android:background="@color/window_background"
     >
 
@@ -59,11 +59,12 @@
                         />
                     <ImageView
                         android:id="@+id/imagememail"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/email_48px"
+                        android:layout_width="96dp"
+                        android:layout_height="80dp"
+                        android:src="@drawable/outline_mail_128px"
                         android:foregroundGravity="center"
                         android:gravity="center"
+                        android:background="@color/tiles_background"
 
                         />
                     <TextView
@@ -84,24 +85,26 @@
                         android:gravity="center"
                         >
 
-                            <ImageView
+                            <ImageButton
                                 android:id="@+id/imageplus"
-                                android:layout_width="16dp"
-                                android:layout_height="16dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
                                 android:src="@drawable/plus_32px"
                                 android:foregroundGravity="center"
                                 android:gravity="center"
-                                android:layout_margin="3dp"
+                                android:layout_margin="5dp"
+                                android:background="@color/tiles_background"
                             />
 
-                            <ImageView
+                            <ImageButton
                                 android:id="@+id/imageminus"
-                                android:layout_width="16dp"
-                                android:layout_height="16dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
                                 android:src="@drawable/minus_32px"
                                 android:foregroundGravity="center"
                                 android:gravity="center"
-                                android:layout_margin="3dp"
+                                android:layout_margin="5dp"
+                                android:background="@color/tiles_background"
                                 />
                     </LinearLayout>
                 </LinearLayout>
@@ -129,13 +132,24 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="R$ 1000.000.000,00
+                        android:text="R$ 1000.000.000,00"
+                        android:textSize="16sp"
+                        android:textColor="@color/primary_text"
+                        android:gravity="left"
+                        android:layout_margin="5dp"
+                        android:padding="2dp"
+                        />
 
-                        Transferencia de Recursos a Eletrobras referente a participação da União para furuto aumento de capital"
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Transferencia de recursos a Eletrobras referente a participação da União para furuto aumento de capital [...]"
                         android:textSize="16sp"
                         android:textColor="@color/primary_text"
                         android:gravity="fill_horizontal"
-                        android:layout_margin="10dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginLeft="5dp"
                         android:padding="2dp"
                         />
 

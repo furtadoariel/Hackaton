@@ -26,12 +26,12 @@
     </group>
 
 
-    <item android:title="Nao sei o que escrever">
+    <item android:title="Exemplo">
         <menu>
             <item
                 android:id="@+id/sobre2"
                 android:icon="@drawable/info2"
-                android:title="Sobre" />
+                android:title="Exemplo" />
             <item
                 android:id="@+id/sair"
                 android:icon="@drawable/ic_apps_black_24dp"
